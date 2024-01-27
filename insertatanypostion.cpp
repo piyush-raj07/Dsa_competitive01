@@ -337,16 +337,35 @@ struct Node* rotatekplaces(struct Node* head,int k)
 
 }
 
+void delmid(Node* head,int k)
+{
+    int size=0;
+    if(k%2==0) size=(k/2)-2;
+    else size=(k/2)-1;
+
+    Node* temp=head;
+
+    while(size--)
+    {
+        temp=temp->next;
+    }
+    Node* del=temp->next;
+    temp->next=del->next;
+    free(del);
+
+}
+
+
 
 
 int main()
 {
     struct Node *head = takeinput();
     //struct Node *head2=takeinput();
-     
+    delmid(head,4);
     print(head);
-    struct Node* ans=rotatekplaces(head,4);
-    print(ans);
+   // struct Node* ans=rotatekplaces(head,4);
+   // print(ans);
    // print(head2);
    // struct Node* ans=mergeLists(head,head2);
     //print(ans);
