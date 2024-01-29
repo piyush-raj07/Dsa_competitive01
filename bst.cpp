@@ -86,8 +86,28 @@ struct node *deleteNode(struct node *root, int key) {
   }
   return root;
 }
+int height(struct node* root)
+    {
+        if(root==NULL) return 0;
+        
+        int lh=height(root->left);
+        int rh=height(root->right);
+        
+        return 1+max(lh,rh);
+    }
 
 // Driver code
+
+void inorder_height(struct node* root)
+{
+  if(root==NULL) return;
+
+  inorder_height(root->left);
+  cout<<root->key<<"->"<< height(root)<<endl;
+  inorder_height(root->right);
+
+  
+}
 int main() {
   struct node *root = NULL;
   /* root = insert(root, 8);
@@ -106,12 +126,12 @@ int main() {
     if(n!=-1) root= insert(root,n);
   }
   
-
-  cout << "Inorder traversal: ";
+   inorder_height(root);
+ /*  cout << "Inorder traversal: ";
   inorder(root);
 
   cout << "\nAfter deleting 10\n";
   root = deleteNode(root, 10);
   cout << "Inorder traversal: ";
-  inorder(root);
+  inorder(root); */
 }

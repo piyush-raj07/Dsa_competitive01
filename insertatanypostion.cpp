@@ -362,7 +362,7 @@ int main()
 {
     struct Node *head = takeinput();
     //struct Node *head2=takeinput();
-    delmid(head,4);
+    delmid(head,5);
     print(head);
    // struct Node* ans=rotatekplaces(head,4);
    // print(ans);
