@@ -53,7 +53,7 @@ bool Graph::isCyclicUtil(int v, bool visited[],
 	}
 
 	// Remove the vertex from recursion stack
-
+     recStack[v]=false;
 	return false;
 }
 
@@ -83,7 +83,7 @@ bool Graph::isCyclic()
 int main()
 {
 	// Create a graph
-	Graph g(1);
+	Graph g(2);
 	g.addEdge(1, 0);
 	//g.addEdge(1, 2);
 	//g.addEdge(2, 3);
